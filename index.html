@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoVoyage | Zaman Yolculuğu Turları</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== ÜST MENÜ (NAVBAR) ==================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        ⌛ Chrono<span>Voyage</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link active">1. Tur Listesi</a></li>
+          <li><a href="detail.html" class="nav-link">2. Tur Detayı & Programı</a></li>
+          <li><a href="booking.html" class="nav-link">3. Tur Kayıt Formu</a></li>
+          <li><a href="tours-table.html" class="nav-link">4. Tarihler & Fiyatlar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== BANNER (HERO) ==================== -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1>Zaman Yolculuğu Başlıyor</h1>
+      <p>
+        Günümüzden geçmişin görkemli medeniyetlerine ve geleceğin neon gökdelenlerine 7 fantastik zaman sıçraması.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== ANA İÇERİK ==================== -->
+  <main class="container">
+
+    <!-- Bilgilendirme Kutusu -->
+    <div class="info-box">
+      <strong>📌 1. Sayfa (Tur Listesi):</strong> Sitemizde <strong>3 Geçmiş</strong>, <strong>1 Günümüz</strong> ve <strong>3 Gelecek</strong> olmak üzere toplam 7 özel tur listelenmektedir. 
+      İstediğiniz turun <strong>"Programı İncele"</strong> butonuna basarak seyahat programına geçebilirsiniz.
+    </div>
+
+    <!-- Arama ve Filtreleme Çubuğu -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Tur adı, dönem veya koordinat ara (örn: Antik Mısır, Mars, 2099)...">
+      <select id="eraSelect">
+        <option value="all">Tüm Zaman Dilimleri (7 Tur)</option>
+        <option value="Geçmiş">Geçmiş Çağlar (3 Tur: Mısır, Rönesans, Dinozorlar)</option>
+        <option value="Günümüz">Günümüz (1 Tur: Kapadokya & İstanbul)</option>
+        <option value="Gelecek">Gelecek Çağlar (3 Tur: Neo-Tokyo, Mars, Atlantis)</option>
+      </select>
+    </div>
+
+    <!-- 7 Turun Dinamik Listelendiği Alan -->
+    <div id="toursList" class="tours-grid">
+      <!-- list.js tarafından dinamik render edilir -->
+    </div>
+
+  </main>
+
+  <!-- ==================== ALT BİLGİ (FOOTER) ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 ChronoVoyage Zaman Seyahat Acentesi • CEN227 İnternet Programcılığı Vize Projesi</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>

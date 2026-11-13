@@ -1,0 +1,475 @@
+/* ==========================================================
+   CEN227 İnternet Programcılığı - Zaman Yolculuğu Acentesi
+   "ChronoVoyage" - Sade, Modern ve Temiz Stil Dosyası
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #0b0f19;
+  color: #e2e8f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: #38bdf8;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #0284c7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ------------------- HEADER ------------------- */
+.site-header {
+  background-color: #111827;
+  border-bottom: 2px solid #1f2937;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo span {
+  color: #a855f7;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  color: #94a3b8;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #1f2937;
+  color: #38bdf8;
+}
+
+/* ------------------- HERO BANNER ------------------- */
+.hero-banner {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 50%, #083344 100%);
+  color: #ffffff;
+  padding: 2.8rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.hero-banner h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #38bdf8, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-banner p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ------------------- BİLGİ KUTUSU ------------------- */
+.info-box {
+  background-color: #1e293b;
+  border-left: 4px solid #38bdf8;
+  padding: 0.9rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+}
+
+/* ------------------- FİLTRE & ARAMA ------------------- */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  background: #111827;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 0.65rem 0.9rem;
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+/* ------------------- ÇAĞ ROZETLERİ ------------------- */
+.era-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.era-past { background-color: #7c2d12; color: #fdba74; }       /* Geçmiş: Sıcak Kahve/Amber */
+.era-present { background-color: #064e3b; color: #6ee7b7; }    /* Günümüz: Zümrüt Yeşili */
+.era-future { background-color: #3b0764; color: #d8b4fe; }     /* Gelecek: Neon Mor/Kuantum */
+
+/* ------------------- TUR KARTLARI (LİSTE) ------------------- */
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.tour-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.tour-card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+}
+
+.tour-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.tour-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tour-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.tour-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.tour-card-meta {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+}
+
+.tour-card-desc {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.tour-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1f2937;
+  padding-top: 0.9rem;
+}
+
+.tour-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+/* ------------------- BUTONLAR ------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: #0284c7;
+  color: #ffffff !important;
+}
+
+.btn-accent {
+  background-color: #9333ea;
+  color: #ffffff !important;
+}
+
+.btn-success {
+  background-color: #059669;
+  color: #ffffff !important;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* ------------------- DETAY SAYFASI ------------------- */
+.detail-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.detail-main {
+  background: #111827;
+  padding: 1.75rem;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+}
+
+.detail-main img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1.2rem 0;
+}
+
+.detail-sidebar {
+  background: #111827;
+  padding: 1.75rem;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  height: fit-content;
+}
+
+.detail-list {
+  margin: 1rem 0 1rem 1.2rem;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+}
+
+.detail-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------- FORM SAYFASI ------------------- */
+.form-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-box {
+  background: #111827;
+  padding: 1.75rem;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  margin-bottom: 0.35rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.form-control.invalid {
+  border-color: #ef4444;
+  background-color: #2a1215;
+}
+
+.form-control.valid {
+  border-color: #10b981;
+}
+
+.error-msg {
+  color: #f87171;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+.summary-box {
+  background: #111827;
+  padding: 1.75rem;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  height: fit-content;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+.summary-row strong,
+.summary-row span {
+  color: #f1f5f9;
+}
+
+.summary-total {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #38bdf8 !important;
+  border-top: 1px solid #334155;
+  padding-top: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* ------------------- TABLO SAYFASI ------------------- */
+.table-box {
+  background: #111827;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+}
+
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.simple-table th, 
+.simple-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+.simple-table th {
+  background-color: #1e293b;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.simple-table tr:hover {
+  background-color: #1e293b;
+}
+
+/* ------------------- FOOTER ------------------- */
+.site-footer {
+  background-color: #0b0f19;
+  border-top: 1px solid #1f2937;
+  color: #64748b;
+  padding: 1.8rem 0;
+  text-align: center;
+  font-size: 0.88rem;
+  margin-top: auto;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .detail-container,
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+  .filter-bar {
+    flex-direction: column;
+  }
+}

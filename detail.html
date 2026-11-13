@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tur Detayı & Seyahat Programı - ChronoVoyage</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== ÜST MENÜ ==================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        ⌛ Chrono<span>Voyage</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">1. Tur Listesi</a></li>
+          <li><a href="detail.html" class="nav-link active">2. Tur Detayı & Programı</a></li>
+          <li><a href="booking.html" class="nav-link">3. Tur Kayıt Formu</a></li>
+          <li><a href="tours-table.html" class="nav-link">4. Tarihler & Fiyatlar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== BANNER ==================== -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1>Zaman Koordinatı & Tur Detayı</h1>
+      <p>Seçilen zaman sıçramasının detaylı aşamalarını ve güvenlik protokollerini inceleyin.</p>
+    </div>
+  </section>
+
+  <!-- ==================== ANA İÇERİK ==================== -->
+  <main class="container">
+
+    <div class="info-box">
+      <strong>📌 2. Sayfa (Tur Detayı ve Programı):</strong> 1. sayfadan seçtiğiniz turun kronolojik seyahat programı ve fiyata dahil kuantum ekipmanları aşağıda sunulmuştur. 
+      Sağdaki <strong>"Bu Tura Kayıt Ol"</strong> butonu seçtiğiniz turu 3. sayfadaki kayıt formuna otomatik taşır.
+    </div>
+
+    <!-- Detay Alanı (Sol: İçerik ve Program, Sağ: Fiyat ve Buton) -->
+    <div class="detail-container" id="detailBox">
+      
+      <!-- Sol: Program & Açıklama -->
+      <div class="detail-main">
+        <span id="tourEraBadge" class="era-badge era-past" style="margin-bottom:0.5rem;">Yükleniyor...</span>
+        <h2 id="tourTitle" style="font-size:1.8rem; margin:0.5rem 0 0.2rem 0; color:#ffffff;">Tur Başlığı Yükleniyor...</h2>
+        <div id="tourLocation" style="color:#38bdf8; font-weight:600; font-size:0.95rem;">Koordinat Yükleniyor...</div>
+        
+        <img id="tourImage" src="" alt="Zaman Turu Görseli">
+
+        <h3 style="color:#a855f7; margin-top:1.2rem; font-size:1.2rem;">📖 Tur Genel Bilgisi</h3>
+        <p id="tourDesc" style="margin-top:0.4rem; color:#cbd5e1;"></p>
+
+        <h3 style="color:#38bdf8; margin-top:1.5rem; font-size:1.2rem;">⏱️ Kronolojik Seyahat Programı</h3>
+        <ul class="detail-list" id="programList">
+          <!-- detail.js dinamik doldurur -->
+        </ul>
+
+        <h3 style="color:#10b981; margin-top:1.5rem; font-size:1.2rem;">🛡️ Fiyata Dahil Kuantum & Güvenlik Ekipmanları</h3>
+        <ul class="detail-list" id="equipmentList">
+          <!-- detail.js dinamik doldurur -->
+        </ul>
+      </div>
+
+      <!-- Sağ: Fiyat, Tarihler ve Kayıt Butonu -->
+      <div class="detail-sidebar">
+        <h3 style="color:#f1f5f9; font-size:1.15rem; margin-bottom:0.5rem;">Zaman Sıçrama Ücreti</h3>
+        <div id="tourPrice" style="font-size:2rem; font-weight:800; color:#38bdf8; margin-bottom:0.4rem;">0 TL</div>
+        <p id="tourSeats" style="color:#94a3b8; font-size:0.85rem; margin-bottom:1.2rem;">Kontenjan Durumu</p>
+
+        <div class="form-group">
+          <label for="dateSelect">Kalkış Sezonu & Tarihi:</label>
+          <select id="dateSelect" class="form-control">
+            <!-- Tarihler dinamik gelir -->
+          </select>
+        </div>
+
+        <!-- 3. Sayfaya Bağlanan Buton -->
+        <a id="bookBtn" href="booking.html" class="btn btn-accent btn-block" style="padding:0.85rem; font-size:1rem; margin-top:1rem;">
+          Bu Tura Kayıt Ol →
+        </a>
+
+        <div style="margin-top:1.5rem; font-size:0.85rem; color:#94a3b8; border-top:1px solid #1f2937; padding-top:1rem; line-height:1.7;">
+          <p>✓ %100 Güvenli Kuantum Portal</p>
+          <p>✓ Zaman Paradoksu Koruması</p>
+          <p>✓ Krono-Rehber Eşliği</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== ALT BİLGİ ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 ChronoVoyage Zaman Seyahat Acentesi • CEN227 İnternet Programcılığı Vize Projesi</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

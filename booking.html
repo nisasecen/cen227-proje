@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tur Kayıt Formu - ChronoVoyage</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== ÜST MENÜ ==================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        ⌛ Chrono<span>Voyage</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">1. Tur Listesi</a></li>
+          <li><a href="detail.html" class="nav-link">2. Tur Detayı & Programı</a></li>
+          <li><a href="booking.html" class="nav-link active">3. Tur Kayıt Formu</a></li>
+          <li><a href="tours-table.html" class="nav-link">4. Tarihler & Fiyatlar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== BANNER ==================== -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1>Zaman Yolculuğu Kayıt Formu</h1>
+      <p>Kuantum sıçrama kapsülünüzü ayırtmak için lütfen yolcu bilgilerini doldurunuz.</p>
+    </div>
+  </section>
+
+  <!-- ==================== ANA İÇERİK ==================== -->
+  <main class="container">
+
+    <div class="info-box">
+      <strong>📌 3. Sayfa (Tur Kayıt Formu):</strong> Seçilen zaman yolculuğu turu formda otomatik olarak işaretlenir. 
+      Yolcu sayısını değiştirdikçe <strong>canlı fiyat hesaplaması</strong> anlık yapılır. Tüm form alanları JavaScript ile doğrulanır (validation).
+    </div>
+
+    <!-- Form Yerleşimi (Sol: Form, Sağ: Canlı Fiyat) -->
+    <div class="form-container">
+      
+      <!-- Sol: Kayıt Formu -->
+      <div class="form-box">
+        <h2 style="margin-bottom:1.2rem; color:#38bdf8; font-size:1.4rem;">Zaman Yolcusu Kayıt Kartı</h2>
+        
+        <form id="chronoBookingForm" novalidate>
+          
+          <!-- Tur Seçimi -->
+          <div class="form-group">
+            <label for="tourSelect">Zaman Sıçraması Yapılacak Tur:</label>
+            <select id="tourSelect" class="form-control" required></select>
+          </div>
+
+          <!-- Ad Soyad -->
+          <div class="form-group">
+            <label for="travelerName">Yolcu Adı ve Soyadı:</label>
+            <input type="text" id="travelerName" class="form-control" placeholder="Örn: Nisa Demir" required>
+            <div id="travelerName-error" class="error-msg"></div>
+          </div>
+
+          <!-- E-Posta -->
+          <div class="form-group">
+            <label for="travelerEmail">E-Posta / İletişim Kanalı:</label>
+            <input type="email" id="travelerEmail" class="form-control" placeholder="Örn: nisa@chronovoyage.com" required>
+            <div id="travelerEmail-error" class="error-msg"></div>
+          </div>
+
+          <!-- Telefon / İletişim Kodu -->
+          <div class="form-group">
+            <label for="travelerPhone">İletişim / Hologram Numarası:</label>
+            <input type="tel" id="travelerPhone" class="form-control" placeholder="Örn: 05321234567" required>
+            <div id="travelerPhone-error" class="error-msg"></div>
+          </div>
+
+          <!-- Sıçrama Tarihi -->
+          <div class="form-group">
+            <label for="jumpDate">Planlanan Sıçrama Tarihi:</label>
+            <input type="date" id="jumpDate" class="form-control" required>
+            <div id="jumpDate-error" class="error-msg"></div>
+          </div>
+
+          <!-- Yolcu Sayısı -->
+          <div class="form-group">
+            <label for="passengersCount">Zaman Yolcusu Sayısı (Kapsül):</label>
+            <input type="number" id="passengersCount" class="form-control" min="1" max="10" value="1" required>
+          </div>
+
+          <!-- Güvenlik Protokolü Onayı -->
+          <div style="margin: 1.2rem 0; display:flex; gap:0.6rem; align-items:flex-start;">
+            <input type="checkbox" id="protocolCheck" style="margin-top:0.3rem;" required>
+            <label for="protocolCheck" style="font-size:0.85rem; color:#cbd5e1; cursor:pointer;">
+              Geçmişteki ve gelecekteki olay akışına müdahale etmeyeceğimi, <strong>Evrensel Zaman Paradoksu Güvenlik Protokolü</strong> kurallarına uyacağımı taahhüt ederim.
+            </label>
+          </div>
+
+          <!-- Kayıt Tamamlama Butonu -->
+          <button type="submit" class="btn btn-accent btn-block" style="padding:0.85rem; font-size:1rem;">
+            🚀 Kuantum Kaydı Tamamla
+          </button>
+        </form>
+      </div>
+
+      <!-- Sağ: Canlı Fiyat Özeti -->
+      <div class="summary-box">
+        <h3 style="color:#38bdf8; margin-bottom:1rem; border-bottom:1px solid #1f2937; padding-bottom:0.5rem; font-size:1.2rem;">
+          📊 Sıçrama Özeti
+        </h3>
+
+        <div class="summary-row">
+          <span>Seçilen Rota:</span>
+          <strong id="summaryTour" style="text-align:right; max-width:60%;">-</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Dönem / Çağ:</span>
+          <span id="summaryEra">-</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Kişi Başı Ücret:</span>
+          <span id="summaryPrice">0 TL</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Yolcu Sayısı:</span>
+          <span id="summaryCount">1 Kişi</span>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>Toplam Tutar:</span>
+          <span id="summaryTotal">0 TL</span>
+        </div>
+
+        <p style="margin-top:1.5rem; font-size:0.85rem; color:#94a3b8; line-height:1.6;">
+          💡 <em>Kişi sayısını veya tur seçimini değiştirdiğinizde toplam tutar JavaScript ile gerçek zamanlı olarak hesaplanır.</em>
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== ALT BİLGİ ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 ChronoVoyage Zaman Seyahat Acentesi • CEN227 İnternet Programcılığı Vize Projesi</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

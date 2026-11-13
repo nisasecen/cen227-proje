@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tur Tarihleri ve Fiyatları - ChronoVoyage</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== ÜST MENÜ ==================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        ⌛ Chrono<span>Voyage</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">1. Tur Listesi</a></li>
+          <li><a href="detail.html" class="nav-link">2. Tur Detayı & Programı</a></li>
+          <li><a href="booking.html" class="nav-link">3. Tur Kayıt Formu</a></li>
+          <li><a href="tours-table.html" class="nav-link active">4. Tarihler & Fiyatlar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== BANNER ==================== -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1>Zaman Turları Karşılaştırma Tablosu</h1>
+      <p>Tüm geçmiş, günümüz ve gelecek turlarımızın tarihlerini, sürelerini ve fiyatlarını karşılaştırın.</p>
+    </div>
+  </section>
+
+  <!-- ==================== ANA İÇERİK ==================== -->
+  <main class="container">
+
+    <div class="info-box">
+      <strong>📌 4. Sayfa (Tur Tarihleri ve Fiyatları Tablosu):</strong> 7 farklı zaman yolculuğu turu tek bir çizelgede sunulmuştur. 
+      Arama kutusu ve çağ filtresi ile arama yapabilir, <strong>"Fiyata Göre Sırala"</strong> butonuyla artan/azalan sıralama yapabilirsiniz. 
+      Her satırdan doğrudan <strong>Detay</strong> veya <strong>Kayıt Ol</strong> sayfalarına geçiş sağlanır.
+    </div>
+
+    <!-- Tablo Kontrolleri -->
+    <div style="display:flex; justify-content:space-between; gap:1rem; margin-bottom:1.2rem; flex-wrap:wrap;">
+      <input type="text" id="tableSearch" placeholder="Tabloda tur, dönem veya koordinat ara..." style="padding:0.65rem 0.9rem; background:#1e293b; color:#fff; border:1px solid #334155; border-radius:6px; flex:1; min-width:240px;">
+      
+      <select id="tableEraFilter" style="padding:0.65rem 0.9rem; background:#1e293b; color:#fff; border:1px solid #334155; border-radius:6px;">
+        <option value="all">Tüm Zaman Dilimleri (7 Tur)</option>
+        <option value="Geçmiş">Geçmiş Çağlar (3 Tur)</option>
+        <option value="Günümüz">Günümüz (1 Tur)</option>
+        <option value="Gelecek">Gelecek Çağlar (3 Tur)</option>
+      </select>
+
+      <button id="sortPriceBtn" class="btn btn-primary">Fiyata Göre Sırala ⇅</button>
+    </div>
+
+    <!-- Karşılaştırma Tablosu -->
+    <div class="table-box">
+      <table class="simple-table">
+        <thead>
+          <tr>
+            <th>Zaman Rotası & Koordinat</th>
+            <th>Dönem / Çağ</th>
+            <th>Süre</th>
+            <th>Kontenjan</th>
+            <th>Tur Tarihleri</th>
+            <th>Fiyat</th>
+            <th>Hızlı İşlem</th>
+          </tr>
+        </thead>
+        <tbody id="chronoTableBody">
+          <!-- table.js dinamik doldurur -->
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- ==================== ALT BİLGİ ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 ChronoVoyage Zaman Seyahat Acentesi • CEN227 İnternet Programcılığı Vize Projesi</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/table.js"></script>
+</body>
+</html>
