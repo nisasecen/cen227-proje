@@ -5,7 +5,7 @@ Bu proje, **CEN227 İnternet Programcılığı** dersi vize ödevi için gelişt
 
 ---
 
-## 🚀 7 Farklı Tur (3 Geçmiş, 1 Günümüz, 3 Gelecek)
+## 7 Farklı Tur (3 Geçmiş, 1 Günümüz, 3 Gelecek)
 
 1. **Geçmiş 1:** Antik Mısır & Büyük Piramitlerin İnşası (M.Ö. 2560 - Giza)
 2. **Geçmiş 2:** Rönesans İtalyası & Da Vinci Atölyesi (M.S. 1503 - Floransa)
@@ -17,7 +17,7 @@ Bu proje, **CEN227 İnternet Programcılığı** dersi vize ödevi için gelişt
 
 ---
 
-## 📌 İstenen 4 Sayfa ve Kullanıcı Akışı (User Flow)
+## İstenen 4 Sayfa ve Kullanıcı Akışı (User Flow)
 
 Ödev tablosundaki 4 sütunla birebir uyumlu:
 
@@ -30,7 +30,7 @@ Bu proje, **CEN227 İnternet Programcılığı** dersi vize ödevi için gelişt
 
 ---
 
-## 📂 Dosya Yapısı
+## Dosya Yapısı
 
 ```text
 travel-agency/
@@ -51,15 +51,3 @@ travel-agency/
 ```
 
 ---
-
-## 🐙 GitHub'a Gönderme (Push)
-
-Terminalde şu komutları çalıştırarak GitHub reponuza gönderebilirsiniz:
-
-```bash
-cd /home/nisa/travel-agency
-git add .
-git commit -m "ChronoVoyage Zaman Yolculugu Acentesi: 7 Tur ve 4 Sayfa"
-git remote add origin https://github.com/KULLANICI_ADINIZ/cen227-time-travel.git
-git push -u origin main
-```
